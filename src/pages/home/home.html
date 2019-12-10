@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reconocimiento de Imagenes G1
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="ion-padding">
+      <div><ion-checkbox color="dark" [(ngModel)]="checkDisabled" (ionChange)="checkEvent()"></ion-checkbox><ion-input type="text" [disabled]="isenabled" [(ngModel)]="tokenInput" placeholder="Ingrese Token"></ion-input></div>
+  </div>
+  <button ion-button (click)="sacarFoto()" full color="primary">Sacar Foto</button>
+  <button ion-button (click)="abrirGaleriaImagen()" full color="primary">Abrir Imagen de la Galeria</button>
+
+  <p align="center"><img src="{{ foto }}" *ngIf="foto"></p>
+  <button ion-button (click)="reconocerImagen()" full color="secondary">Reconocer Imagen</button>
+  <p style="font-size: 22px;">{{ frutaYPuntaje }}</p>
+</ion-content>
